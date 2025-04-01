@@ -12,6 +12,8 @@ public class TestBuilderVO {
     //1. 멤버변수
     private String name;
     private int age;
+    private String id;
+    private String address;
 
 //    //3. 외부클래스가 생성될떄 내부클래스인 Builder를 매개변수로 받음
 //    private TestBuilderVO(Builder builder) {

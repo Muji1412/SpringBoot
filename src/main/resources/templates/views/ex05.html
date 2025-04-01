@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>ex05페이지</h3>
+
+<th:block th:replace="~{/include/layout01 :: part1}"></th:block>
+<th:block th:replace="~{/include/layout01 :: part2}"></th:block>
+
+<hr>
+
+<h3> 전체 레이아웃을 가져오는법</h3>
+
+<th:block th:replace="~{/include/layout02 }"/>
+
+</body>
+</html>

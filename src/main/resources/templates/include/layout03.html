@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<th:block th:fragment="함수(item)">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <h3>모든 페이지가 공통으로 사용하는 템플릿 UI</h3>
+</header>
+
+<section>
+    <!-- item 변수에 해당하는 프래그먼트를 동적으로 삽입 -->
+    <th:block th:replace="${item}"></th:block>
+</section>
+
+<footer>
+    <p>푸터 내용들</p>
+</footer>
+</body>
+</html>
+</th:block>
