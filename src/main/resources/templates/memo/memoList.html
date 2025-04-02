@@ -15,19 +15,17 @@
 				<td>연락처</td>
 				<td>공개여부</td>
 			</tr>
-						
-			<tr>
-				<td></td>
-				
-				<td>비밀글입니다 (비밀글인 경우엔 true)</td>
-				<td>데이터 (비밀글이 아닌 경우에 true)</td>
-				
-				<td></td>
-				<td></td>
+
+			<tr th:each="memo : ${memoList}">
+				<td th:text="${memo.mno}"></td>
+				<td th:text="${memo.secret == 'y'.charAt(0) ? '비밀글입니다' : memo.memo}"></td>
+
+				<td th:text="${memo.phone}"></td>
+				<td th:text="${memo.secret}"></td>
 			</tr>
-			
+
 	</table>
-	
+
 	<a href="memoWrite">메모쓰기</a>
 </body>
 </html>

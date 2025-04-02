@@ -1,0 +1,5 @@
+create database spring default charset utf8;
+DROP DATABASE spring;
+
+create user spring identified by 'spring';
+grant all privileges on spring.* to spring;
