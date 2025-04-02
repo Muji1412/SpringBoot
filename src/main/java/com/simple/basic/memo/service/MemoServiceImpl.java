@@ -1,0 +1,4 @@
+package com.simple.basic.memo.service;
+
+public class MemoServiceImpl {
+}
