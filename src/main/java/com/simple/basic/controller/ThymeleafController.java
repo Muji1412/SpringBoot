@@ -108,7 +108,7 @@ public class ThymeleafController {
         System.out.println(id + ", " + name + ", " + model);
         SimpleVO vo = SimpleVO
                         .builder()
-                        .id(id)
+                        .sno(id)
                         .name(name)
                         .signInTime(LocalDateTime.now())
                         .build();

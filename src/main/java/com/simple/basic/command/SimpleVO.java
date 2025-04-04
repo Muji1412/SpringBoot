@@ -8,8 +8,9 @@ import java.time.LocalDateTime;
 @Builder
 @Getter
 @ToString
+@Data
 public class SimpleVO {
-    private int id;
+    private int sno;
     private String name;
     private LocalDateTime signInTime;
 }
