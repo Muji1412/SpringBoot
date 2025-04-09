@@ -19,6 +19,8 @@ import java.util.Map;
 @Slf4j
 @RestController // 일반 컨트롤러와는 다른 의미, 리턴에 담기는 데이터가 요청한 곳으로 응답함
 //@Controller + @Responsebody = @RestController
+
+@CrossOrigin("*")
 public class RestBasicController {
     @GetMapping("/hello")
     public String hello() {
@@ -57,7 +59,11 @@ public class RestBasicController {
     //값을 받는 방법
     //요청의 다양한 방법 get
     //@RequestParam이나, Vo를 통해 받을 수 있음
+//    @CrossOrigin("http://127.0.0.1:5500")
+//    @CrossOrigin({"1번 주소, 2번 주소"})
+//    @CrossOrigin("*") // 다열어주기
     @GetMapping("/getData")
+
     public String getData(@RequestParam("name") String name,
                           @RequestParam("sno") Integer sno,
                           HttpServletRequest request) {

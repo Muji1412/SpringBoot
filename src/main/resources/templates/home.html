@@ -8,5 +8,92 @@
 <h1>Hello World!</h1>
 타임리프 페이지
 
+<button type="button" id = "getData">get방식</button>
+<button type="button" id = "getJson">post방식</button>
+<button type="button" id = "v1getData">v1getData</button>
+<button type="button" id = "v1getInfo">v1getInfo</button>
+
+
+<script>
+    var getData = document.getElementById("getData");
+    getData.onclick = function () {
+        // fetch("/getData?name=이순신&sno=10")
+        fetch("/getData3/홍길자/20")
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(data) {
+                console.log(data);
+            });
+    }
+</script>
+<script>
+    var v1getData = document.getElementById("v1getData");
+    v1getData.onclick = function () {
+        // GET 방식으로 변경하고 URL에 파라미터 추가
+        fetch("/api/v1/getData?name=김길동&sno=123", {
+            method: "GET"
+        })
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(data) {
+                console.log(data);
+            });
+    }
+</script>
+
+<script>
+    var getJson = document.getElementById("getJson");
+    getJson.onclick = function () {
+        fetch("/getJson", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: '홍길동',
+                age: 20
+            })
+        })
+            .then(function (response) {
+                return response.text(); // json()
+            })
+            .then(function (data) {
+                console.log(data);
+            });
+    }
+</script>
+
+<script>
+    var v1getInfo = document.getElementById("v1getInfo");
+    v1getInfo.onclick = function () {
+        fetch("api/v1/getInfo", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify([
+                    {
+                        name: '이순신',
+                        sno: 123
+                    },
+                    {
+                        name: '삼순신',
+                        sno: 321
+
+                    }
+                ]
+                )
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                console.log(data);
+            })
+    }
+</script>
+
 </body>
 </html>
