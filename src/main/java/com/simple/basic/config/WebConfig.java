@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 //Context.xml 파일을 이걸로 대체한다.
 @Configuration // 이 클래스를 스프링의 자바설정파일로 쓰겠다는 선언
-@PropertySource("classpath:/application-production.properties") // classpath 아래를 가르킴
+@PropertySource("classpath:/application.properties") // classpath 아래를 가르킴
 public class WebConfig implements WebMvcConfigurer {
 
 //    @Value("${server.port}")
